@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace CoreResume.Pages
+namespace CoreCrud.Pages
 {
-    public class MyResumeModel : PageModel
+    public class ContactModel : PageModel
     {
         public void OnGet()
         {
