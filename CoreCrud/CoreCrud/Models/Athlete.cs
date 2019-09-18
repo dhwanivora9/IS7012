@@ -17,6 +17,23 @@ namespace CoreCrud.Models
 
         public int NationalityID { get; set; }
         public Country Nationality { get; set; }
-
+        public string Category
+        {
+            get
+            {
+                if (Weight > 150)
+                {
+                    return "Heavy";
+                }
+                else if (Weight > 145 && Weight < 150)
+                    {
+                    return "Medium";
+                }
+                else
+                {
+                    return "low";
+                }
+            }
+        }
     }
 }

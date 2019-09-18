@@ -1,0 +1,32 @@
+﻿@page
+@model CoreCrud.Pages.CountryProfileModel
+@{
+    ViewData["Title"] = "CountryProfile";
+}
+
+<h1>CountryProfile</h1>
+@foreach (var ath in @Model.CountryProfile.Athletes)
+{
+    <table border="1" align="center" width="1000" height="100">
+        <thead>
+            <tr>
+                <td><strong>Name</strong> <br/>@ath.Name</td>
+                <td><strong>BirthDate </strong> <br />@ath.BirthDate</td>
+                <td><strong>Weight </strong> <br />@ath.Weight</td>
+                <td><strong>Height </strong> <br />@ath.Height</td>
+                <td><strong>NationalityID</strong> <br /> @ath.Nationality.CountryName</td>
+                <td>
+                    @if (ath.USCitizen == true)
+                    {
+                    <h6> <strong>USCitizen:</strong> <br /><span class="badge badge-success">Yes</span></h6>
+                    }
+                    else
+                    {
+                <h6> <strong>USCitizen:</strong> <br /><span class="badge badge-danger">No</span></h6>
+                    }
+                </td> 
+            </tr>
+        </thead>
+    </table>
+
+ }

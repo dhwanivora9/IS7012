@@ -1,0 +1,28 @@
+﻿@page
+@model CoreCrud.Pages.RosterModel
+@{
+    ViewData["Title"] = "Roster";
+}
+
+<h1>Roster</h1>
+<h2>Following is the list of Athelets</h2>
+
+@foreach (var rost in Model.Athletes)
+{
+
+    <div class="card">
+
+        <div class="Card-header">
+            @rost.Name
+
+        </div>
+        <div class="card-body">
+            <p>Weight: @rost.Weight</p>
+            <p>Height: @rost.Height</p>
+            <p>NationalityID: @rost.NationalityID</p>
+            <p>Birthdate: @rost.BirthDate</p>
+            <p>Category:@rost.Category</p>
+        </div>
+    </div>
+    <br />
+}
