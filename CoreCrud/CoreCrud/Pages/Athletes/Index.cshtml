@@ -5,62 +5,70 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Athlete Database</h1>
+<div class="=col-md-12">
+    <div class="col-md-3 float-right">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Jim_Thorpe%2C_1912_Summer_Olympics.jpg/800px-Jim_Thorpe%2C_1912_Summer_Olympics.jpg" alt="Flags Photo" align="center" width="300" height="700">
+    </div>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Athlete[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Athlete[0].BirthDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Athlete[0].USCitizen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Athlete[0].Weight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Athlete[0].Height)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Athlete[0].Nationality)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Athlete) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BirthDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.USCitizen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Weight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Height)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nationality.CountryName)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Athlete[0].Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Athlete[0].BirthDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Athlete[0].USCitizen)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Athlete[0].Weight)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Athlete[0].Height)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Athlete[0].Nationality)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+    </div>
+</div>
+@foreach (var item in Model.Athlete)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USCitizen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nationality.CountryName)
+        </td>
+        <td>
+            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+            <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+        </td>
+    </tr>
 }
     </tbody>
 </table>
