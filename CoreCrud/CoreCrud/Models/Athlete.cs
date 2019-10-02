@@ -34,8 +34,7 @@ namespace CoreCrud.Models
         [Display(Name = "Weight")]
         public decimal Weight { get; set; }
 
-
-       
+    
         public decimal? Height { get; set; }
 
        
